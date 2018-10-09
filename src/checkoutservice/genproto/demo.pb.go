@@ -24,8 +24,9 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type CartItem struct {
-	ProductId            string   `protobuf:"bytes,1,opt,name=product_id,json=productId" json:"product_id,omitempty"`
-	Quantity             int32    `protobuf:"varint,2,opt,name=quantity" json:"quantity,omitempty"`
+	ProductId string `protobuf:"bytes,1,opt,name=product_id,json=productId" json:"product_id,omitempty"`
+	Quantity  int32  `protobuf:"varint,2,opt,name=quantity" json:"quantity,omitempty"`
+	// TODO: Add Tax Bracket
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
