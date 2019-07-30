@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: loadgenerator
 spec:
+  progressDeadlineSeconds: 60
   selector:
     matchLabels:
       app: loadgenerator
@@ -49,8 +50,8 @@ spec:
           value: "10"
         resources:
           requests:
-            cpu: 300m
-            memory: 256Mi
+            cpu: 10m
+            memory: 18Mi
           limits:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 10m
+            memory: 30Mi

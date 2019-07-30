@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: redis-cart
 spec:
+  progressDeadlineSeconds: 200
   selector:
     matchLabels:
       app: redis-cart
@@ -42,12 +43,12 @@ spec:
         - mountPath: /data
           name: redis-data
         resources:
-          limits:
-            memory: 256Mi
-            cpu: 125m
           requests:
-            cpu: 70m
-            memory: 200Mi
+            cpu: 10m
+            memory: 18Mi
+          limits:
+            cpu: 10m
+            memory: 30Mi
       volumes:
       - name: redis-data
         emptyDir: {}

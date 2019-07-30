@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: currencyservice
 spec:
+  progressDeadlineSeconds: 200
   selector:
     matchLabels:
       app: currencyservice
@@ -43,11 +44,11 @@ spec:
             command: ["/bin/grpc_health_probe", "-addr=:7000"]
         resources:
           requests:
-            cpu: 100m
-            memory: 64Mi
+            cpu: 10m
+            memory: 18Mi
           limits:
-            cpu: 200m
-            memory: 128Mi
+            cpu: 10m
+            memory: 30Mi
 ---
 apiVersion: v1
 kind: Service

@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: checkoutservice
 spec:
+  progressDeadlineSeconds: 100
   selector:
     matchLabels:
       app: checkoutservice
@@ -55,11 +56,11 @@ spec:
           #   value: "jaeger-collector:14268"
           resources:
             requests:
-              cpu: 100m
-              memory: 64Mi
+              cpu: 10m
+              memory: 18Mi
             limits:
-              cpu: 200m
-              memory: 128Mi
+              cpu: 10m
+              memory: 30Mi
 ---
 apiVersion: v1
 kind: Service

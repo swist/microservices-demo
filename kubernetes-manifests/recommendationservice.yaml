@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: recommendationservice
 spec:
+  progressDeadlineSeconds: 30
   selector:
     matchLabels:
       app: recommendationservice
@@ -48,11 +49,11 @@ spec:
           value: "0"
         resources:
           requests:
-            cpu: 100m
-            memory: 220Mi
+            cpu: 10m
+            memory: 18Mi
           limits:
-            cpu: 200m
-            memory: 450Mi
+            cpu: 10m
+            memory: 30Mi
 ---
 apiVersion: v1
 kind: Service
